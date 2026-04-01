@@ -1,6 +1,8 @@
 body{
-    background-color: rgb(145, 38, 38);
+    background-color: rgb(255, 255, 255);
 }
+
+
 
 #container{
     padding-top: 20px;
@@ -56,7 +58,6 @@ fieldset{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
 }
-
 #botaostick {
     position: sticky;
     bottom: 0;

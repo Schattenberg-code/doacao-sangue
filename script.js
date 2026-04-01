@@ -33,11 +33,19 @@ form.addEventListener('submit', function(e){
     ==========================
     */
 
-    if(!nome){
-        document.getElementById('erroNome').textContent = "Insira um nome.";
+
+    if(!nome.trim()){
+        document.getElementById('erroNome').textContent = "Insira um nome e sobrenome.";
+        valido = false;
+    } else if(!nome.trim().includes(" ")){
+        document.getElementById('erroNome').textContent = "Insira um sobrenome.";
         valido = false;
     }
+
     if(!email){
+        document.getElementById('erroEmail').textContent = "Insira um email.";
+        valido = false;
+    } else if(!email.includes("@")){
         document.getElementById('erroEmail').textContent = "Insira um email.";
         valido = false;
     }
@@ -65,6 +73,14 @@ form.addEventListener('submit', function(e){
         document.getElementById('erroEstado').textContent = "Insira seu estado.";
         valido = false;
     }
+
+    /* 
+    ==========================
+    ====validações simples====
+    ==========================
+    */
+
+
 
 
     //botão enviar//
