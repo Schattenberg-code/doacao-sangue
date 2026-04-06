@@ -8,6 +8,8 @@ form.addEventListener('submit', function(e){
 
     let valido = true;
 
+    
+
     let nome = document.getElementById('nome').value;
     let email = document.getElementById('email').value;
     let telefone = document.getElementById('telefone').value;
@@ -25,6 +27,18 @@ form.addEventListener('submit', function(e){
     document.getElementById('erroPeso').textContent = "";
     document.getElementById('erroSangue').textContent = "";
     document.getElementById('erroEstado').textContent = "";
+
+    let listaDados = [];
+    let dados = {
+    nome,
+    email,
+    idade,
+    peso,
+    tipoSanguineo: sangue,
+    telefone,
+    cidade,
+    estado
+    };
 
 
     /* 
@@ -46,49 +60,63 @@ form.addEventListener('submit', function(e){
         document.getElementById('erroEmail').textContent = "Insira um email.";
         valido = false;
     } else if(!email.includes("@")){
-        document.getElementById('erroEmail').textContent = "Insira um email.";
+        document.getElementById('erroEmail').textContent = "Insira um email válido";
         valido = false;
     }
+
     if(!idade){
         document.getElementById('erroIdade').textContent = "Insira a idade.";
         valido = false;
+    } else if (idade < 16){
+        document.getElementById('erroIdade').textContent = "Você precisa ter ao menos 16 anos.";
+        valido = false;
     }
+
     if(!peso){
         document.getElementById('erroPeso').textContent = "Insira seu peso.";
         valido = false;
+    } else if (peso < 50){
+        document.getElementById('erroPeso').textContent = "Você precisa ter ao menos 50kg";
+        valido = false;
     }
+
     if(!sangue){
         document.getElementById('erroSangue').textContent = "Insira seu tipo sanguíneo.";
         valido = false;
     }
+
     if(!telefone){
         document.getElementById('erroTelefone').textContent = "Insira seu telefone.";
         valido = false;
     }
+
     if(!cidade){
         document.getElementById('erroCidade').textContent = "Insira sua cidade.";
         valido = false;
     }
+
     if(!estado){
         document.getElementById('erroEstado').textContent = "Insira seu estado.";
         valido = false;
     }
 
-    /* 
-    ==========================
-    ====validações simples====
-    ==========================
-    */
-
-
-
 
     //botão enviar//
 
     if (valido) {
+        listaDados.push(dados);
+
+        console.log(listaDados);
+
         alert("Formulário enviado com sucesso!");
-        form.submit();
+
+        document.getElementById('nome').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('telefone').value = "";
+        document.getElementById('idade').value = "";
+        document.getElementById('cidade').value = "";
+        document.getElementById('peso').value = "";
+        document.getElementById('sangue').value = "";
+        document.getElementById('estado').value = "";
     }
-
-
 })

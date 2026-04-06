@@ -6,12 +6,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <section>
+        <nav id="navbar">
+            <div>
+                <h3>Doar Sangue</h3>
+            </div>
+            <div>
+                <h3>suporte</h3>
+            </div>
+        </nav>
+    </section>
     
     <section class="flex">
         <div id="container">
             <form action="" id="formulario" novalidate>
                 <fieldset>
-                    <h3>Responda o formulário</h3>
+                    <h3>Cadastrar-se</h3>
                 </fieldset>
                 <fieldset>
                     <label class="label" for="nome">Nome completo:</label> <br>
@@ -41,8 +52,14 @@
                     <label class="label" for="sangue">Tipo sanguíneio:</label> <br>
                     <select class="input" name="sangue" id="sangue">
                         <option value="">Selecione</option>
-                        <option value="O+">o+</option>
-                        <option value="O-">o-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
                     </select>
                     <div class="erro" id="erroSangue"></div>
                 </fieldset>
@@ -70,7 +87,16 @@
                         <button id="enviar" type="submit">Enviar</button>
                     </div>
                 </fieldset>
+                
+                <fieldset>
+                    <div id="divTabela">
+                    <img id="imagemTabela" src="images/tabela_compatibilidade.webp" alt="">
+                    </div>
+                </fieldset>
+
             </form>
+
+            
                 
         </div>
     </section>
